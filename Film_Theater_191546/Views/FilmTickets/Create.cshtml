@@ -1,0 +1,60 @@
+﻿@model FilmTheater.Domain.DomainModels.FilmTicket
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FilmTicket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FilmName" class="control-label"></label>
+                <input asp-for="FilmName" class="form-control" />
+                <span asp-validation-for="FilmName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmPosterImage" class="control-label"></label>
+                <input asp-for="FilmPosterImage" class="form-control" />
+                <span asp-validation-for="FilmPosterImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmDescription" class="control-label"></label>
+                <input asp-for="FilmDescription" class="form-control" />
+                <span asp-validation-for="FilmDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmGenre" class="control-label"></label>
+                <input asp-for="FilmGenre" class="form-control" />
+                <span asp-validation-for="FilmGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmTicketPrice" class="control-label"></label>
+                <input asp-for="FilmTicketPrice" class="form-control" />
+                <span asp-validation-for="FilmTicketPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmRating" class="control-label"></label>
+                <input asp-for="FilmRating" class="form-control" />
+                <span asp-validation-for="FilmRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValidUntilDate" class="control-label"></label>
+                <input asp-for="ValidUntilDate" class="form-control" />
+                <span asp-validation-for="ValidUntilDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

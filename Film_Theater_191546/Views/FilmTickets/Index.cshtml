@@ -1,0 +1,75 @@
+﻿@model FilmTheater.Domain.DTO.FilmListDTO
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+        
+        @{ if (Model.loggedInUser.isAdmin) {
+            
+            <div class="row m-2">
+                <div class="col-4">
+                    <a class="btn btn-success" asp-controller="FilmTickets" asp-action="Create">Add new Film</a>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-success" asp-controller="Order" asp-action="ExportAllTickets">Export All Tickets</a>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-success" asp-controller="Order" asp-action="ExportSpecificTicket">Export Specific Tickets</a>
+                </div>
+            </div>
+            
+            } }
+
+    <div class="row d-flex flex-wrap"  >
+        @for (int i = 0; i < Model.films.Count; i++)
+        {
+            var item = Model.films[i];
+
+
+
+
+
+            <div class="col-sm-6">
+                <div class="card mb-3" style="max-width: 500px;">
+                    <div class="row g-0 justify-content-between">
+                        <div class="col-md-6">
+                            <img class="img-fluid rounded-start" src="@item.FilmPosterImage" style="width: 100%; height: 100%; position:relative;" alt="Image for ticket!" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.FilmName</h5>
+                                <div style="height:100px; overflow-y: scroll">
+                                    <p class="card-text">@item.FilmDescription</p>
+                                </div>
+                                <p class="card-text text-muted">Price: @item.FilmTicketPrice</p>
+                                <p class="card-text text-muted">Valid Until: @item.ValidUntilDate.Date</p>
+                                @{ if (Model.loggedInUser.isAdmin)
+                                    {
+                                        <a asp-controller="FilmTickets" asp-action="Edit" asp-route-id="@item.id" class="btn btn-secondary">Edit</a>
+                                        <a asp-controller="FilmTickets" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                                    }
+                                }
+                                @{ if (Model.loggedInUser.Name != null)
+                                    {
+                                        <a href="/FilmTickets/AddToCart?filmticketId=@item.id&cartId=1"> Add to cart</a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        }
+
+    </div>
+
+    </div>

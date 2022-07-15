@@ -1,0 +1,10 @@
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\bin\Debug\netcoreapp3.1\FilmTheater.Domain.deps.json
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\bin\Debug\netcoreapp3.1\FilmTheater.Domain.dll
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\bin\Debug\netcoreapp3.1\FilmTheater.Domain.pdb
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.csproj.AssemblyReference.cache
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.AssemblyInfoInputs.cache
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.AssemblyInfo.cs
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.dll
+C:\Users\Murat Useini\source\repos\Film_Theater_191546\FilmTheater.Domain\obj\Debug\netcoreapp3.1\FilmTheater.Domain.pdb

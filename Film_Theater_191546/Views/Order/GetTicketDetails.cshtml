@@ -1,0 +1,64 @@
+﻿@model TicketOrder
+
+@{
+    ViewData["Title"] = "GetTicketDetails";
+}
+
+
+
+<div class="container">
+    <div>
+
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    <div class="container align-content-center">
+
+        <h4>Ticket Order</h4>
+        <hr />
+
+        @for (int i = 0; i < Model.FilmTicketsInOrder.ToList().Count; i++)
+        {
+            var ticket = Model.FilmTicketsInOrder[i].FilmTicket;
+            if (i % 3 == 0)
+            {
+                @:<div class="row">
+                }
+
+
+                <div class="col-md-3 m-4">
+                    <div class="card" style="width: 18rem; height: 30rem;">
+                        <img class="card-img-top" src="@ticket.FilmPosterImage" style="height: 50%" alt="Image for product!" />
+
+                        <div class="card-body">
+                            <h3 class="card-title">@ticket.FilmName</h3>
+
+                            <div style="height:100px; overflow-y: scroll">
+                                <p class="card-text">@ticket.FilmDescription</p>
+                            </div>
+
+                        </div>
+
+                        <div class="card-footer">
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                if (i % 3 == 2)
+                {
+
+                @:</div>
+            }
+        }
+
+
+
+
+
+    </div>
+
+</div>

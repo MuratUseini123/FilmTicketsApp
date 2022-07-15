@@ -1,0 +1,82 @@
+﻿
+@model FilmTheater.Domain.DTO.TicketCartDTO
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="form-group">
+        <a href="/TicketCart/OrderNow" class="btn btn-warning">Order now</a>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase mb-0">Manage Tickets Here</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table no-wrap user-table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                                <th scope="col" class="border-0 text-uppercase font-medium">Film Name</th>
+                                <th scope="col" class="border-0 text-uppercase font-medium">Quantity</th>
+                                <th scope="col" class="border-0 text-uppercase font-medium">Product Price</th>
+                                <th scope="col" class="border-0 text-uppercase font-medium"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ int count = 1;}
+                            @if (Model.TicketsInTickets.Count == 0)
+                            {
+                                <tr>
+                                    <td colspan="5">No active Films</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < Model.TicketsInTickets.Count; i++)
+                                {
+                                    var film = Model.TicketsInTickets[i];
+
+                                    <tr>
+                                        <th scope="row">@(i + 1)</th>
+                                        <td>@film.FilmTicket.FilmName</td>
+                                        <td>@film.TicketQuantity</td>
+                                        <td>$@film.FilmTicket.FilmTicketPrice</td>
+                                        <td><a asp-controller="TicketCart" asp-action="DeleteFromTicketCart" asp-route-id="@film.FilmTicketId" class="btn btn-danger">Delete From Ticket Cart</a></td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                        <tfoot class="thead-dark">
+                            <tr>
+                                <th scope="col">Total Price:</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">$@Model.TotalPrice</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
